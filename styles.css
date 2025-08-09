@@ -1,0 +1,309 @@
+/* Reset & base */
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    background: linear-gradient(180deg, #0f3d3e, #0b7c82); /* Vertical gradient: top to bottom */
+    background-size: 100% 200%; /* Oversize height for smooth vertical movement */
+    color: #e0f2f1;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    animation: slideGradient 10s ease-in-out infinite;
+    -webkit-animation: slideGradient 10s ease-in-out infinite; /* For older browsers */
+}
+
+@keyframes slideGradient {
+    0% {
+        background-position: 50% 0%; /* Start: #0f3d3e at top, #504c07 at bottom */
+    }
+    50% {
+        background-position: 50% 100%; /* Middle: #504c07 at top, #0f3d3e at bottom */
+    }
+    100% {
+        background-position: 50% 0%; /* End: Back to #0f3d3e at top, #504c07 at bottom */
+    }
+}
+
+@-webkit-keyframes slideGradient {
+    0% {
+        background-position: 50% 0%;
+    }
+    50% {
+        background-position: 50% 100%;
+    }
+    100% {
+        background-position: 50% 0%;
+    }
+}
+  
+  .container {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+  
+  /* Glassmorphism base */
+  .glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: saturate(180%) blur(15px);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 80, 70, 0.37);
+    padding: 30px;
+  }
+  
+  /* Hero */
+  .hero {
+    text-align: center;
+    padding: 40px 20px;
+  }
+  
+  .profile-pic {
+    width: 500px;
+    height: 500px;
+    border-radius: 100%;
+    border: 3px solid #34d399;
+    margin-bottom: 20px;
+    object-fit: cover;
+    box-shadow: 0 0 15px #34d399aa;
+    transition: transform 0.3s ease;
+  }
+  .profile-pic:hover {
+    transform: scale(1.1) rotate(5deg);
+  }
+  
+  .name {
+    font-weight: 700;
+    font-size: 3rem;
+    margin-bottom: 8px;
+  }
+  
+  .role {
+    font-weight: 300;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    letter-spacing: 0.05em;
+    color: #a6f1d1;
+  }
+  
+  /* Gradient animated text */
+  .gradient-text {
+    background: linear-gradient(270deg, #1de9b6, #d33434, #ec8cec, #b0bb35);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 8s ease infinite;
+  }
+  
+  @keyframes gradientShift {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+  }
+  
+  /* Buttons */
+  .glass-btn {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1.5px solid #34d399;
+    padding: 12px 28px;
+    color: #a6f1d1;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+    font-size: 1.1rem;
+    box-shadow: 0 0 10px #34d399aa;
+    text-transform: uppercase;
+  }
+  
+  .glass-btn:hover {
+    background: #34d399;
+    color: #002219;
+    box-shadow: 0 0 20px #34d399ff;
+    transform: scale(1.05);
+  }
+  
+  /* Sections */
+  .section-title {
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+  }
+  
+  .about.glass {
+    text-align: center;
+}
+
+.highlight {
+    font-weight: bold;
+    color: #ffffff; /* A vibrant blue for visibility; adjust to match your site's theme */
+}
+
+
+  /* About */
+  .about p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+    color: #c8f8e4;
+  }
+  
+  /* Portfolio Cards */
+  .cards {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .card {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    width: 300px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(34, 221, 180, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px #1de9b6;
+  }
+  
+  .card h3 {
+    margin: 15px;
+    font-weight: 600;
+    color: #a6f1d1;
+  }
+  
+  .card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-bottom: 2px solid #34d399;
+  }
+  
+  
+  .card p {
+    margin: 0 15px 20px;
+    font-weight: 300;
+    font-size: 1rem;
+    color: #d4f8e8;
+    flex-grow: 1;
+  }
+
+  
+  
+  /* Gallery */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(140px,1fr));
+    gap: 15px;
+    justify-items: center;
+  }
+  
+  .gallery-grid img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 18px;
+    border: 1.5px solid #34d399;
+    box-shadow: 0 0 15px #34d399aa;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .gallery-grid img:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Zodiac canvas container */
+  .zodiac-container {
+    text-align: center;
+    padding: 30px 20px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  #taurusCanvas {
+    border-radius: 24px;
+    border: 1px solid rgba(52, 211, 153, 0.5);
+    box-shadow: 0 0 40px #1de9b6aa;
+    background: rgba(0, 40, 38, 0.9);
+    cursor: crosshair;
+    max-width: 100%;
+    height: auto;
+    user-select: none;
+  }
+  
+  .caption {
+    margin-top: 12px;
+    font-weight: 300;
+    font-size: 1rem;
+    color: #7ef8d7aa;
+  }
+  
+  /* Contact */
+  .contact {
+    text-align: center;
+    padding: 40px 20px;
+  }
+  
+  .email-link {
+    color: #34d399;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .email-link:hover {
+    color: #1de9b6;
+  }
+
+  .social-links a {
+    color: #34d399;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  .social-links a:hover {
+    color: #1de9b6;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .cards {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .card {
+      width: 90%;
+    }
+  
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+    }
+  
+    .name {
+      font-size: 2.2rem;
+    }
+  }
+  
