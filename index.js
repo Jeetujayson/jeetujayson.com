@@ -27,7 +27,7 @@ document.getElementById('bookCallBtnFooter').onclick = openCalendly;
 
   // Draw polka dots with green glowing style and dark green background
   function drawDots() {
-    ctx.fillStyle = '#000'; // Dark green background
+    ctx.fillStyle = '#000'; // Black background
     ctx.fillRect(0, 0, width, height);
 
     points.forEach(point => {
